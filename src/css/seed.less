@@ -1,7 +1,6 @@
 @import "seattletimes";
 @aspect-ratio: 7/10;
 @legend-length: 5; //number of legend items
-
 body {
   font-family: @df-sans;
   padding: 0;
@@ -41,9 +40,6 @@ body {
     &:not([ready]) {
       display: none;
     }
-    .marker-icon {
-      width: 13px;
-    }
   }
 
   .info-display {
@@ -74,13 +70,6 @@ body {
     font-family: @df-serif;
   }
 }
-
-.lead-icon {
-  border-radius: 100%;
-  opacity: 0.6;
-  border-color: #bcbec0;
-}
-
 @import "leaflet-tweaks";
 @import "legend";
 @import "popup";
