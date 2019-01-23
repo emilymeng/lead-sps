@@ -1,19 +1,19 @@
-aside.legend {
-  position: absolute;
+div.legend {
   bottom: 10px;
   left: 10px;
   padding: 6px 8px;
   font-size: 12px;
   font-family: sans-serif;
-  background: white;
-  background: rgba(255,255,255,0.8);
-  border-radius: 5px;
-  @media @tablet {
+  width: 100%;
+  align-content: center;
+
+    @media @tablet {
     position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
   }
+
   h1 {
     margin: 0;
     padding: 5px 5px 5px 0;
@@ -31,23 +31,18 @@ aside.legend {
     li {
       line-height: 18px;
       margin-bottom: 2px;
-      @media @tablet {
-        float: left;
-        text-align: center;
-        width: 100% / @legend-length;
+      float: left;
+      text-align: center;
+      width: 100% / @legend-length;
       }
     }
     .block {
-      width: 2em;
+      width: auto;
       height: 12px;
-      display: inline-block;
+      display: block;
       vertical-align: text-top;
-      @media @tablet {
-        display: block;
-        width: auto;
-      }
+      opacity: 0.8;
     }
-  }
 }
 .source {
   font-size: 12px;

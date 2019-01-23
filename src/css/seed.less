@@ -17,18 +17,27 @@ body {
   padding-bottom: 0;
   clear: both;
 }
+
 .aspect-ratio-outer {
+    h1 {
+      font-size: 16px;
+      text-align: center;
+      line-height: 1.2;
+    }
+    
   width: 100%;
   position: relative;
   margin: 0 -15px;
     .display-flex();
 
+    @media @mobile {
+        display: block;
+    }
 
   .aspect-ratio-inner {
     padding-bottom: percentage(@aspect-ratio);
     position: relative;
     margin: 0 15px;
-    .flex(0 0 66%);
   }
 
   leaflet-map {
@@ -41,14 +50,12 @@ body {
       display: none;
     }
   }
-
-  .info-display {
-    .flex(0 0 33%);
-  }
 }
+
 .map-container {
   position: relative;
 }
+
 .bigheader {
   text-align: center;
   font-size: 16px;

@@ -23,40 +23,45 @@
           sodales risus. </p>
       </section>
 
-      <div class="aspect-ratio-outer">
-        <div data-flex="2-1">
-        <div class="aspect-ratio-inner">
-
-          <leaflet-map zoom=11>
-            <tile-layer layer="cartoPositron"></tile-layer>
-          </leaflet-map>
-
-        </div>
-        <aside class="legend">
+        <div class="legend">
           <h1>Drinking water sources with lead</h1>
           <ul class="scale">
             <li>
-              <span class="block" style="background-color: orange"></span> 21 % or more</li>
+              <span class="block" style="background-color: #d73027"></span> 21 % or more</li>
             <li>
-              <span class="block" style="background-color: yellow"></span> 11 - 20%</li>
+              <span class="block" style="background-color: #f46d43"></span> 11 - 20%</li>
             <li>
-              <span class="block" style="background-color: green"></span> 1- 10%</li>
+              <span class="block" style="background-color: #fee090"></span> 1- 10%</li>
             <li>
-              <span class="block" style="background-color: blue"></span> 0%</li>
+              <span class="block" style="background-color: #abd9e9"></span> 0%</li>
           </ul>
-        </aside>
+        </div>
+
+      <div class="aspect-ratio-outer">
+
+
+        <div data-flex="1-2">
+          <h1>Seattle Public School lead limit (10 ppb)</h1>
+        <div class="aspect-ratio-inner">
+          <leaflet-map class="SPS" zoom=11>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+        </div>
       </div>
 
       <div data-flex="1-2">
+        <h1>Noah lead limit (2 ppb)</h1>
         <div class="aspect-ratio-inner">
-          <leaflet-map class="NOAH" zoom=11>
+          <leaflet-map class="noah" zoom=11>
             <tile-layer layer="cartoPositron"></tile-layer>
           </leaflet-map>
       </div>
+    </div>
+  </div>
+        
 
-
-      <div class="source">Source: Name of source
-        <span class="credit">XXX XXX / THE SEATTLE TIMES</div>
+      <div class="source">Source: Seattle Public Schools
+        <span class="credit">Emily M. Eng / THE SEATTLE TIMES</div>
     </div>
   </responsive-child>
 

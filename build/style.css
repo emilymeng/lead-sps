@@ -6,6 +6,11 @@ Shims for Flexbox - should work on Safari and IE10+
   display: -ms-flexbox;
   display: flex;
 }
+.display-flex [data-flex="1-2"] {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -155,13 +160,25 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+.aspect-ratio-outer h1 {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.2;
+}
+.aspect-ratio-outer [data-flex="1-2"] {
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+}
+@media (max-width: 480px) {
+  .aspect-ratio-outer {
+    display: block;
+  }
+}
 .aspect-ratio-outer .aspect-ratio-inner {
   padding-bottom: 70%;
   position: relative;
   margin: 0 15px;
-  -webkit-flex: 0 0 66%;
-  -ms-flex: 0 0 66%;
-  flex: 0 0 66%;
 }
 .aspect-ratio-outer leaflet-map {
   position: absolute;
@@ -172,11 +189,6 @@ body {
 }
 .aspect-ratio-outer leaflet-map:not([ready]) {
   display: none;
-}
-.aspect-ratio-outer .info-display {
-  -webkit-flex: 0 0 33%;
-  -ms-flex: 0 0 33%;
-  flex: 0 0 33%;
 }
 .map-container {
   position: relative;
@@ -212,26 +224,24 @@ div.leaflet-popup-content-wrapper {
   padding-left: 10px;
   padding-right: 10px;
 }
-aside.legend {
-  position: absolute;
+div.legend {
   bottom: 10px;
   left: 10px;
   padding: 6px 8px;
   font-size: 12px;
   font-family: sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  width: 100%;
+  align-content: center;
 }
 @media (max-width: 800px) {
-  aside.legend {
+  div.legend {
     position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
   }
 }
-aside.legend h1 {
+div.legend h1 {
   margin: 0;
   padding: 5px 5px 5px 0;
   text-align: left;
@@ -239,35 +249,26 @@ aside.legend h1 {
   text-transform: uppercase;
   line-height: 1.5;
 }
-aside.legend ul.scale {
+div.legend ul.scale {
   padding: 0;
   margin: 0;
   list-style-type: none;
   overflow: auto;
   padding-bottom: 8px;
 }
-aside.legend ul.scale li {
+div.legend ul.scale li {
   line-height: 18px;
   margin-bottom: 2px;
+  float: left;
+  text-align: center;
+  width: 20%;
 }
-@media (max-width: 800px) {
-  aside.legend ul.scale li {
-    float: left;
-    text-align: center;
-    width: 20%;
-  }
-}
-aside.legend ul.scale .block {
-  width: 2em;
+div.legend .block {
+  width: auto;
   height: 12px;
-  display: inline-block;
+  display: block;
   vertical-align: text-top;
-}
-@media (max-width: 800px) {
-  aside.legend ul.scale .block {
-    display: block;
-    width: auto;
-  }
+  opacity: 0.8;
 }
 .source {
   font-size: 12px;
