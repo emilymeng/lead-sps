@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>
+    <%= json.project.title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Safari, you're the worst -->
+  <meta name='format-detection' content='telephone=no'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <%= t.include("partials/_head.html") %>
+</head>
+
+<body>
+
+  <responsive-child class="map-container">
+    <div class="outmost">
+      <section class="chatter">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat aliquam lectus vitae porttitor. Donec euismod sem dui, ac gravida sem mattis sed. Fusce porttitor accumsan sem elementum convallis. Nam id augue lobortis, laoreet magna non,
+          sodales risus. </p>
+      </section>
+
+      <div class="aspect-ratio-outer">
+        <div data-flex="2-1">
+        <div class="aspect-ratio-inner">
+
+          <leaflet-map zoom=11>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+
+        </div>
+        <aside class="legend">
+          <h1>Drinking water sources with lead</h1>
+          <ul class="scale">
+            <li>
+              <span class="block" style="background-color: orange"></span> 21 % or more</li>
+            <li>
+              <span class="block" style="background-color: yellow"></span> 11 - 20%</li>
+            <li>
+              <span class="block" style="background-color: green"></span> 1- 10%</li>
+            <li>
+              <span class="block" style="background-color: blue"></span> 0%</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div data-flex="1-2">
+        <div class="info-display">
+          <%= t.include("js/_popup.html") %>
+      </div>
+
+
+      <div class="source">Source: Name of source
+        <span class="credit">XXX XXX / THE SEATTLE TIMES</div>
+    </div>
+  </responsive-child>
+
+  <script src="app.js"></script>
+  <% /*= t.include("partials/_foot.html"); */ %>
+    <%= t.include("partials/_workHere.html") %>
+</body>
+
+</html>
