@@ -48,8 +48,10 @@
       </div>
 
       <div data-flex="1-2">
-        <div class="info-display">
-          <%= t.include("js/_popup.html") %>
+        <div class="aspect-ratio-inner">
+          <leaflet-map class="NOAH" zoom=11>
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
       </div>
 
 

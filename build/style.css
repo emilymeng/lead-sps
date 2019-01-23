@@ -6,11 +6,6 @@ Shims for Flexbox - should work on Safari and IE10+
   display: -ms-flexbox;
   display: flex;
 }
-.display-flex [data-flex="2-1"] {
-  -webkit-flex: 0 0 66%;
-  -ms-flex: 0 0 66%;
-  flex: 0 0 66%;
-}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -160,11 +155,6 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
-.aspect-ratio-outer [data-flex="2-1"] {
-  -webkit-flex: 0 0 66%;
-  -ms-flex: 0 0 66%;
-  flex: 0 0 66%;
-}
 .aspect-ratio-outer .aspect-ratio-inner {
   padding-bottom: 70%;
   position: relative;
@@ -182,9 +172,6 @@ body {
 }
 .aspect-ratio-outer leaflet-map:not([ready]) {
   display: none;
-}
-.aspect-ratio-outer leaflet-map .marker-icon {
-  width: 13px;
 }
 .aspect-ratio-outer .info-display {
   -webkit-flex: 0 0 33%;
@@ -213,11 +200,6 @@ body {
 .chatter p {
   text-align: center;
   font-family: "ff-meta-serif-web-pro", Georgia, serif;
-}
-.lead-icon {
-  border-radius: 100%;
-  opacity: 0.6;
-  border-color: #bcbec0;
 }
 div.leaflet-popup-content {
   margin: 10px 5px;
