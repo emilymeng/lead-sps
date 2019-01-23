@@ -48,7 +48,7 @@
       </div>
 
       <div data-flex="1-2">
-        <div class="info-display">
+        <div class="popuptext">
           <%= t.include("js/_popup.html") %>
       </div>
 
@@ -57,6 +57,10 @@
         <span class="credit">XXX XXX / THE SEATTLE TIMES</div>
     </div>
   </responsive-child>
+
+  <script>
+    window.lead = <%= JSON.stringify(json.lead) %>
+  </script>
 
   <script src="app.js"></script>
   <% /*= t.include("partials/_foot.html"); */ %>
