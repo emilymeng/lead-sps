@@ -1,0 +1,346 @@
+/*
+Shims for Flexbox - should work on Safari and IE10+
+*/
+.display-flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.display-flex [data-flex="2-1"] {
+  -webkit-flex: 0 0 66%;
+  -ms-flex: 0 0 66%;
+  flex: 0 0 66%;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  color: #231f20;
+  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.42105263;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #0777b3;
+  text-decoration: none;
+  outline: 0 !important;
+}
+a:hover {
+  color: #2b4d70;
+}
+a img {
+  border: none;
+}
+img,
+video,
+embed,
+object,
+iframe {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #231f20;
+  margin: 1.42105263 0 0.71052632 0;
+}
+h1 {
+  font-size: 28px;
+  line-height: 1.07142857;
+  letter-spacing: -0.5px;
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 42px;
+    line-height: 1.0952381;
+    letter-spacing: -1px;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 1.42105263;
+}
+h3 {
+  font-size: 22px;
+  line-height: 1.04545455;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0.71052632 0 0 0;
+}
+nav.main-nav {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+  position: relative;
+  line-height: 1;
+}
+nav.main-nav .wrapper {
+  max-width: 1020px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  nav.main-nav .wrapper {
+    height: 40px;
+    padding: 10px;
+  }
+}
+nav.main-nav .logo {
+  display: block;
+  vertical-align: middle;
+}
+nav.main-nav .logo img {
+  width: 310px;
+  height: 70px;
+  max-height: 100%;
+}
+@media (max-width: 800px) {
+  nav.main-nav .logo img {
+    height: 24px;
+    width: auto;
+  }
+}
+nav.main-nav .share {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+@media (max-width: 800px) {
+  nav.main-nav .share {
+    top: 10px;
+    right: 4px;
+    width: auto !important;
+  }
+}
+nav.main-nav .share label {
+  background: white !important;
+}
+@media (max-width: 480px) {
+  nav.main-nav .share label span {
+    display: none;
+  }
+  nav.main-nav .share .left {
+    margin-left: -275px !important;
+  }
+}
+body {
+  font-family: "ff-dagny-web-pro", Helvetica Neue, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 960px;
+  font-size: 16px;
+}
+.outmost {
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 8px 0;
+  margin: 20px auto;
+  max-width: 960px;
+  padding-bottom: 0;
+  clear: both;
+}
+.aspect-ratio-outer {
+  width: 100%;
+  position: relative;
+  margin: 0 -15px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.aspect-ratio-outer [data-flex="2-1"] {
+  -webkit-flex: 0 0 66%;
+  -ms-flex: 0 0 66%;
+  flex: 0 0 66%;
+}
+.aspect-ratio-outer .aspect-ratio-inner {
+  padding-bottom: 70%;
+  position: relative;
+  margin: 0 15px;
+  -webkit-flex: 0 0 66%;
+  -ms-flex: 0 0 66%;
+  flex: 0 0 66%;
+}
+.aspect-ratio-outer leaflet-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.aspect-ratio-outer leaflet-map:not([ready]) {
+  display: none;
+}
+.aspect-ratio-outer leaflet-map .marker-icon {
+  width: 13px;
+}
+.aspect-ratio-outer .info-display {
+  -webkit-flex: 0 0 33%;
+  -ms-flex: 0 0 33%;
+  flex: 0 0 33%;
+}
+.map-container {
+  position: relative;
+}
+.bigheader {
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 12px 0 0;
+}
+@media (max-width: 800px) {
+  .bigheader {
+    font-size: 14px;
+  }
+}
+.chatter h1 {
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.2;
+}
+.chatter p {
+  text-align: center;
+  font-family: "ff-meta-serif-web-pro", Georgia, serif;
+}
+.lead-icon {
+  border-radius: 100%;
+  opacity: 0.6;
+  border-color: #bcbec0;
+}
+div.leaflet-popup-content {
+  margin: 10px 5px;
+  width: auto;
+  font-family: "ff-dagny-web-pro", Helvetica Neue, Helvetica, sans-serif;
+}
+div.leaflet-popup-content-wrapper {
+  border-radius: 3px;
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.3);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+aside.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+@media (max-width: 800px) {
+  aside.legend {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}
+aside.legend h1 {
+  margin: 0;
+  padding: 5px 5px 5px 0;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+aside.legend ul.scale {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  overflow: auto;
+  padding-bottom: 8px;
+}
+aside.legend ul.scale li {
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+@media (max-width: 800px) {
+  aside.legend ul.scale li {
+    float: left;
+    text-align: center;
+    width: 20%;
+  }
+}
+aside.legend ul.scale .block {
+  width: 2em;
+  height: 12px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+@media (max-width: 800px) {
+  aside.legend ul.scale .block {
+    display: block;
+    width: auto;
+  }
+}
+.source {
+  font-size: 12px;
+  padding: 10px 0;
+  color: #999;
+  clear: both;
+  font-style: italic;
+  text-align: left;
+}
+.source .credit {
+  font-style: normal;
+  text-transform: uppercase;
+  display: inline-block;
+  float: right;
+}
+.popuptext {
+  font-family: "ff-dagny-web-pro", Helvetica Neue, Helvetica, sans-serif;
+  width: auto;
+}
+@media (max-width: 800px) {
+  .popuptext {
+    max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .popuptext {
+    overflow: scroll;
+  }
+}
+.popuptext .descript {
+  margin: 6px 0;
+}
+.popuptext .note {
+  margin-top: 8px;
+  font-size: 95%;
+  text-decoration: italic;
+  color: #6d6d6d;
+  padding-left: 5px;
+}
+.popuptext .address {
+  text-align: center;
+}
+.popuptext .emphasis {
+  font-weight: bold;
+  font-size: 110%;
+}
+.popuptext .popup-img {
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+}
+.popuptext .credit {
+  font-size: 90%;
+  text-align: right;
+  text-transform: uppercase;
+  display: block;
+  color: gray;
+}

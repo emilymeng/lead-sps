@@ -1,7 +1,0 @@
-node_modules
-build
-temp
-auth.json
-.DS_Store
-npm-debug.log
-src/js/lib/*/**
