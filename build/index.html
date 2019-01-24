@@ -68,10 +68,10 @@ h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bw
       </section>
 
         <div class="legend">
-          <h1>Drinking water sources with lead</h1>
+          <h1>Drinking-water sources with lead</h1>
           <ul class="scale">
             <li>
-              <span class="block" style="background-color: #d73027"></span> 21 % or more</li>
+              <span class="block" style="background-color: #d73027"></span> 21% or more</li>
             <li>
               <span class="block" style="background-color: #f46d43"></span> 11 - 20%</li>
             <li>
@@ -86,18 +86,20 @@ h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bw
 
         <div data-flex="1-2">
           <h1>Seattle Public School lead limit (10 ppb)</h1>
-        <div class="aspect-ratio-inner">
+          <h2>42/99 schools found with lead above 10 ppb</h2>
+        <div class="aspect-ratio-inner" id="map1">
           <leaflet-map class="SPS" zoom=11>
-            <tile-layer layer="cartoPositron"></tile-layer>
+<!--             <tile-layer layer="cartoPositron"></tile-layer> -->
           </leaflet-map>
         </div>
       </div>
 
       <div data-flex="1-2">
         <h1>Noah lead limit (2 ppb)</h1>
-        <div class="aspect-ratio-inner">
+        <h2>89/99 schools found with lead aboe 2 ppb</h2>
+        <div class="aspect-ratio-inner" id="map2">
           <leaflet-map class="noah" zoom=11>
-            <tile-layer layer="cartoPositron"></tile-layer>
+<!--             <tile-layer layer="cartoPositron"></tile-layer> -->
           </leaflet-map>
       </div>
     </div>

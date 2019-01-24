@@ -163,7 +163,14 @@ body {
 .aspect-ratio-outer h1 {
   font-size: 16px;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1;
+}
+.aspect-ratio-outer h2 {
+  font-size: 13px;
+  text-align: center;
+  line-height: .05;
+  font-weight: normal;
+  padding-bottom: 10px;
 }
 .aspect-ratio-outer [data-flex="1-2"] {
   -webkit-flex: 0 0 50%;

@@ -1,19 +1,50 @@
 //load our custom elements
 require("component-leaflet-map");
 require("component-responsive-frame");
+require("leaflet.sync")
 
 //get access to Leaflet and the map
-var element = document.querySelector("leaflet-map");
+var element = document.querySelector("leaflet-map.SPS");
 var L = element.leaflet;
-var map = element.map;
+var mapSPS = element.map;
 
 //ICH code for popup template if needed----------
 var ich = require("icanhaz");
 var templateFile = require("./_popup.html");
 ich.addTemplate("popup", templateFile);
 
+ //map sync
+var center = [47.604575, -122.334715];
+var layer1 = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  });
+var layer2 = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  });
+var map1 = L.map('map1', {
+            layers: [layer1],
+            center: center,
+            zoom: 11
+        });
+map1.attributionControl.setPrefix('');
+var map2 = L.map('map2', {
+            layers: [layer2],
+            center: center,
+            zoom: 11,
+            zoomControl: false
+        });
+map1.sync(map2);
+map2.sync(map1);
+
+
+//map 1
+
 var data = require("./SPS-lead.geo.json");
-var mapElement = document.querySelector("leaflet-map.SPS");
+var mapElementSPS = document.querySelector("leaflet-map.SPS");
+
+data.features.forEach(function(f) {
+  ["aboveTwo", "aboveTen"].forEach(function(prop) {
+    f.properties[prop] = (f.properties[prop]*100).toFixed(1);
+  });
+});
 
 var onEachFeature = function(feature, layer) {
   layer.bindPopup(ich.popup(feature.properties))
@@ -23,7 +54,6 @@ var onEachFeature = function(feature, layer) {
         layer.setStyle({ weight: 3, fillOpacity: .8 });
       },
       mouseout: function(e) {
-        if (focused && focused == layer) { return }
         layer.setStyle({ weight: 1, fillOpacity: 0.6 });
       }
     });
@@ -54,15 +84,20 @@ var geojson = L.geoJson(data, {
     },
     style: geojsonMarkerOptions,
     onEachFeature: onEachFeature
-}).addTo(map);
+}).addTo(map1);
 
- map.scrollWheelZoom.disable();
+ mapSPS.scrollWheelZoom.disable();
 
-//second map
+//map 2
+
+var element = document.querySelector("leaflet-map.noah");
+var L2 = element.leaflet;
+var mapNoah = element.map;
+
 var dataNoah = require("./SPS-lead.geo.json");
-var mapElement2 = document.querySelector("leaflet-map.noah");
+var mapElementNoah = document.querySelector("leaflet-map.noah");
 
-var onEachFeature2 = function(feature, layer) {
+var onEachFeature = function(feature, layer) {
   layer.bindPopup(ich.popup(feature.properties))
 
     layer.on({
@@ -70,24 +105,23 @@ var onEachFeature2 = function(feature, layer) {
         layer.setStyle({ weight: 3, fillOpacity: .8 });
       },
       mouseout: function(e) {
-        if (focused && focused == layer) { return }
         layer.setStyle({ weight: 1, fillOpacity: 0.6 });
       }
     });
 };
 
-function getColor2(d) {
-  return  d >= .21 ? '#d73027' :
-          d >= .11 ? '#f46d43' :
-          d >= .01 ? '#fee090' :
+function getColor(d) {
+  return  d >= 21 ? '#d73027' :
+          d >= 11 ? '#f46d43' :
+          d >= 1 ? '#fee090' :
     '#abd9e9';
 }
 
-function geojsonMarker2Options(feature) {
+function geojsonMarkerOptions2(feature) {
 
   return {
     radius: 6,
-    fillColor: getColor2(feature.properties.aboveTwo),
+    fillColor: getColor(feature.properties.aboveTwo),
     color: "#000000",
     weight: 1,
     opacity: 1,
@@ -95,13 +129,12 @@ function geojsonMarker2Options(feature) {
   }
 };
 
-var geojson = L.geoJson(dataNoah, {
+var geojson = L2.geoJson(dataNoah, {
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker2(latlng);
+        return L2.circleMarker(latlng);
     },
-    style: geojsonMarker2Options,
-    onEachFeature2: onEachFeature2
-}).addTo(map);
+    style: geojsonMarkerOptions2,
+    onEachFeature: onEachFeature
+}).addTo(map2);
 
- map.scrollWheelZoom.disable();
-
+ mapNoah.scrollWheelZoom.disable();
