@@ -88,7 +88,7 @@ var geojson = L.geoJson(data, {
     onEachFeature: onEachFeature
 }).addTo(map1);
 
- mapSPS.scrollWheelZoom.disable();
+ map1.scrollWheelZoom.disable();
 
 //map 2
 
@@ -139,4 +139,4 @@ var geojson = L2.geoJson(dataNoah, {
     onEachFeature: onEachFeature
 }).addTo(map2);
 
- mapNoah.scrollWheelZoom.disable();
+ map2.scrollWheelZoom.disable();

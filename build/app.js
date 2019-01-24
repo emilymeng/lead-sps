@@ -1835,7 +1835,7 @@ var geojson = L.geoJson(data, {
   onEachFeature: onEachFeature
 }).addTo(map1);
 
-mapSPS.scrollWheelZoom.disable();
+map1.scrollWheelZoom.disable();
 
 //map 2
 
@@ -1883,7 +1883,7 @@ var geojson = L2.geoJson(dataNoah, {
   onEachFeature: onEachFeature
 }).addTo(map2);
 
-mapNoah.scrollWheelZoom.disable();
+map2.scrollWheelZoom.disable();
 
 },{"./SPS-lead.geo.json":26,"./_popup.html":27,"component-leaflet-map":7,"component-responsive-frame":13,"icanhaz":23,"leaflet.sync":24}]},{},[28])
 //# sourceMappingURL=app.js.map

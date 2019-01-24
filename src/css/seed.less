@@ -17,6 +17,10 @@ body {
   max-width: 960px;
   padding-bottom: 0;
   clear: both;
+
+  @media @mobile {
+    border-bottom: 0px;
+  }
 }
 
 .aspect-ratio-outer {
@@ -24,6 +28,7 @@ body {
       font-size: 16px;
       text-align: center;
       line-height: 1;
+      letter-spacing: 3;
     }
 
     h2 {
@@ -34,14 +39,15 @@ body {
       padding-bottom: 10px;
     }
 
-  width: 100%;
-  position: relative;
-  margin: 0 -15px;
+    width: 100%;
+    position: relative;
+    margin: 0 -15px;
     .display-flex();
 
-    @media @mobile {
-        display: block;
-    }
+      @media @mobile {
+          display: block;
+          margin: 0;
+      }
 
   .aspect-ratio-inner {
     padding-bottom: percentage(@aspect-ratio);

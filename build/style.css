@@ -152,6 +152,11 @@ body {
   padding-bottom: 0;
   clear: both;
 }
+@media (max-width: 480px) {
+  .outmost {
+    border-bottom: 0px;
+  }
+}
 .aspect-ratio-outer {
   width: 100%;
   position: relative;
@@ -164,6 +169,7 @@ body {
   font-size: 16px;
   text-align: center;
   line-height: 1;
+  letter-spacing: 3;
 }
 .aspect-ratio-outer h2 {
   font-size: 13px;
@@ -180,6 +186,7 @@ body {
 @media (max-width: 480px) {
   .aspect-ratio-outer {
     display: block;
+    margin: 0;
   }
 }
 .aspect-ratio-outer .aspect-ratio-inner {
@@ -232,15 +239,15 @@ div.leaflet-popup-content-wrapper {
   padding-right: 10px;
 }
 div.legend {
+  text-align: center;
   bottom: 10px;
   left: 10px;
   padding: 6px 8px;
   font-size: 12px;
   font-family: sans-serif;
   width: 100%;
-  align-content: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 480px) {
   div.legend {
     position: relative;
     width: 100%;
@@ -251,17 +258,23 @@ div.legend {
 div.legend h1 {
   margin: 0;
   padding: 5px 5px 5px 0;
-  text-align: left;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1.5;
+  display: inline-block;
+  letter-spacing: 2;
 }
 div.legend ul.scale {
-  padding: 0;
+  padding: 0 0 0 130px;
   margin: 0;
   list-style-type: none;
   overflow: auto;
   padding-bottom: 8px;
+}
+@media (max-width: 480px) {
+  div.legend ul.scale {
+    padding: 0 0 0 30px;
+  }
 }
 div.legend ul.scale li {
   line-height: 18px;
@@ -271,7 +284,7 @@ div.legend ul.scale li {
   width: 20%;
 }
 div.legend .block {
-  width: auto;
+  width: 100%;
   height: 12px;
   display: block;
   vertical-align: text-top;
@@ -284,6 +297,11 @@ div.legend .block {
   clear: both;
   font-style: italic;
   text-align: left;
+}
+@media (max-width: 480px) {
+  .source {
+    padding: 0 0 20 0px;
+  }
 }
 .source .credit {
   font-style: normal;
