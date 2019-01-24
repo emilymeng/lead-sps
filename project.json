@@ -1,7 +1,7 @@
 {
   "s3": {
     "stage": {
-      "bucket": "project-staging.seattletimes.com",
+      "bucket": "projects-staging.seattletimes.com",
       "path": "delicious-juice"
     },
     "live": {
