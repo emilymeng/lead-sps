@@ -3,6 +3,8 @@ require("component-leaflet-map");
 require("component-responsive-frame");
 require("leaflet.sync")
 
+
+
 //get access to Leaflet and the map
 var element = document.querySelector("leaflet-map.SPS");
 var L = element.leaflet;
