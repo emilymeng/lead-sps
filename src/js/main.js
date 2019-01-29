@@ -31,7 +31,6 @@ var map2 = L.map('map2', {
             layers: [layer2],
             center: center,
             zoom: 11,
-            zoomControl: false
         });
 map1.sync(map2);
 map2.sync(map1);
@@ -39,7 +38,7 @@ map2.sync(map1);
 
 //map 1
 
-var data = require("./SPS-lead.geo.json");
+var data = require("./lead-count.geo.json");
 var mapElementSPS = document.querySelector("leaflet-map.SPS");
 
 data.features.forEach(function(f) {
@@ -61,22 +60,22 @@ var onEachFeature = function(feature, layer) {
     });
 };
 
-function getColor(d) {
-  return  d >= .21 ? '#d73027' :
-          d >= .11 ? '#f46d43' :
-          d >= .01 ? '#fee090' :
-    '#abd9e9';
-}
+// function getColor(d) {
+//   return  d >= 7 ? '#d73027' :
+//           d >= 4 ? '#f46d43' :
+//           d >= 1 ? '#fee090' :
+//     '#abd9e9';
+// }
 
 function geojsonMarkerOptions(feature) {
 
   return {
-    radius: 6,
-    fillColor: getColor(feature.properties.aboveTen),
+    radius: 5.5,
+    fillColor: getColor(feature.properties.leadSourceAboveTen),
     color: "#000000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 0.7
+    fillOpacity: 0.6
   }
 };
 
@@ -96,7 +95,7 @@ var element = document.querySelector("leaflet-map.noah");
 var L2 = element.leaflet;
 var mapNoah = element.map;
 
-var dataNoah = require("./SPS-lead.geo.json");
+var dataNoah = require("./lead-count.geo.json");
 var mapElementNoah = document.querySelector("leaflet-map.noah");
 
 var onEachFeature = function(feature, layer) {
@@ -113,21 +112,21 @@ var onEachFeature = function(feature, layer) {
 };
 
 function getColor(d) {
-  return  d >= 21 ? '#d73027' :
-          d >= 11 ? '#f46d43' :
-          d >= 1 ? '#fee090' :
+  // return  d >= 7 ? '#d73027' :
+          // d >= 4 ? '#f46d43' :
+      return d >= 1 ? '#f46d43' :
     '#abd9e9';
 }
 
 function geojsonMarkerOptions2(feature) {
 
   return {
-    radius: 6,
-    fillColor: getColor(feature.properties.aboveTwo),
+    radius: 5.5,
+    fillColor: getColor(feature.properties.leadSourceAboveTwo),
     color: "#000000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 0.7
+    fillOpacity: 0.6
   }
 };
 

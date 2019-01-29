@@ -1,9 +1,14 @@
-<div class="info-display">
+<div class="popup">
 
-  <h2 class="bigheader">{{SchoolLong}}</h2>
+  <h1 class="bigheader">{{SchoolLong}}</h1>
+<br>
+  <div class="emphasis"><b>SPS LIMIT (lead exceeding 10 ppb)</b></div>
+  <div class="descript"><b>{{leadSourceAboveTen}}/{{allSource}}</b> water sources<br><b>{{aboveTen}}%</b> of all sources</div>
+<br>
+  <div class="emphasis"><b>NOAH LIMIT (lead exceeding 2 ppb)</b></div>
+  <div class="descript"><b>{{leadSourceAboveTwo}}/{{allSource}}</b> water sources<br><b>{{aboveTwo}}%</b> of all sources</div>
 
-  <div class="descript">Water sources <b>exceeding 10 ppb</b> of lead (SPS limit): <b>{{aboveTen}}%</b></div>
-  <div class="descript">Water sources <b>exceeding 2 ppb</b> of lead (NOAH limit): <b>{{aboveTwo}}%</b></div>
+<br>
   <div class="descript"><b>Most recent test: {{testDate}}</b><br> - Highest lead level recorded: {{lead}} ppb<br>
   {{#remediation}} - Action taken: {{remediation}}</div>
   {{/remediation}} 
