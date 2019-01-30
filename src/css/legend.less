@@ -32,11 +32,13 @@ div.legend {
   }
 
   ul.scale {
-    padding:0 0 0 130px;
+    padding:0 0 0 340px;
     margin: 0;
     list-style-type: none;
     overflow: auto;
-    padding-bottom: 8px;
+    @media @tablet {
+      padding: 0 0 0 230px;
+    }
 
     @media @mobile {
       padding: 0 0 0 30px;

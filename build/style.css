@@ -272,11 +272,15 @@ div.legend h1 {
   }
 }
 div.legend ul.scale {
-  padding: 0 0 0 130px;
+  padding: 0 0 0 340px;
   margin: 0;
   list-style-type: none;
   overflow: auto;
-  padding-bottom: 8px;
+}
+@media (max-width: 800px) {
+  div.legend ul.scale {
+    padding: 0 0 0 230px;
+  }
 }
 @media (max-width: 480px) {
   div.legend ul.scale {
