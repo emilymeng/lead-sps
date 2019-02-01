@@ -272,20 +272,12 @@ div.legend h1 {
   }
 }
 div.legend ul.scale {
-  padding: 0 0 0 340px;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
   list-style-type: none;
   overflow: auto;
-}
-@media (max-width: 800px) {
-  div.legend ul.scale {
-    padding: 0 0 0 230px;
-  }
-}
-@media (max-width: 480px) {
-  div.legend ul.scale {
-    padding: 0 0 0 30px;
-  }
+  width: 100%;
 }
 div.legend ul.scale li {
   line-height: 18px;

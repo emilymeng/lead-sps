@@ -5,8 +5,8 @@
       "path": "delicious-juice"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2019/metro/lead-sps"
     }
   },
   "title": "",
